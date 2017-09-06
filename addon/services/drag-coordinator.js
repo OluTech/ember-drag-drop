@@ -27,7 +27,6 @@ export default Ember.Service.extend({
   },
 
   dragStarted(object, event, emberObject) {
-    console.log('dragStarted');
     this.set('currentDragObject', object);
     this.set('currentDragEvent', event);
     this.set('currentDragItem', emberObject);
@@ -35,10 +34,6 @@ export default Ember.Service.extend({
   },
 
   dragEnded() {
-    console.log('dragEnded', this.get('sortComponentController'));
-    // if (this.get('enableSort')) {
-    //   this.sendAction('sortEndAction');
-    // }
     this.get('sortComponentController').sendSortEndAction();
     this.set('currentDragObject', null);
     this.set('currentDragEvent', null);
@@ -47,8 +42,6 @@ export default Ember.Service.extend({
   },
 
   draggingOver(event, emberObject) {
-    // console.log('draggingOver - event', event);
-    // console.log('draggingOver - emberObject', emberObject);
     const currentOffsetItem = this.get('currentOffsetItem');
     const pos = this.relativeClientPosition(emberObject.$()[0], event);
     const hasSameSortingScope = this.get('currentDragItem.sortingScope') === emberObject.get('sortingScope');
