@@ -24,6 +24,7 @@ export default Ember.Component.extend( {
   },
 
   dragStart: function(event) {
+    console.log('dragStart', event);
     event.stopPropagation();
     if (!this.get('enableSort')) {
       return false;
@@ -44,6 +45,7 @@ export default Ember.Component.extend( {
   },
 
   drop: function(event) {
+    console.log('drop', event);
     event.stopPropagation();
     if (this.get('enableSort')) {
       this.sendAction('sortEndAction', event);
