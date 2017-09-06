@@ -48,5 +48,10 @@ export default Ember.Component.extend( {
     if (this.get('enableSort')) {
       this.sendAction('sortEndAction', event);
     }
+  },
+  sendSortEndAction: function(){
+    if (this.get('enableSort')) {
+      this.sendAction('sortEndAction', event);
+    }
   }
 });
