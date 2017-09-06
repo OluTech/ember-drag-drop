@@ -39,6 +39,7 @@ export default Ember.Component.extend( {
   },
 
   dragOver: function(event) {
+    console.log('dragOver', event);
     //needed so drop event will fire
     event.stopPropagation();
     return false;
