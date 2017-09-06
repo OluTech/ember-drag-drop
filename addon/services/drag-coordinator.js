@@ -39,6 +39,7 @@ export default Ember.Service.extend({
     // if (this.get('enableSort')) {
     //   this.sendAction('sortEndAction');
     // }
+    this.get('sortComponentController').sendSortEndAction();
     this.set('currentDragObject', null);
     this.set('currentDragEvent', null);
     this.set('currentDragItem', null);
