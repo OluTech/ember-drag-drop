@@ -43,8 +43,8 @@ export default Ember.Service.extend({
   },
 
   draggingOver(event, emberObject) {
-    console.log('draggingOver - event', event);
-    console.log('draggingOver - emberObject', emberObject);
+    // console.log('draggingOver - event', event);
+    // console.log('draggingOver - emberObject', emberObject);
     const currentOffsetItem = this.get('currentOffsetItem');
     const pos = this.relativeClientPosition(emberObject.$()[0], event);
     const hasSameSortingScope = this.get('currentDragItem.sortingScope') === emberObject.get('sortingScope');
